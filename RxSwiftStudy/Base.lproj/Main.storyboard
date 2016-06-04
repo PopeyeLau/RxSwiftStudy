@@ -82,7 +82,7 @@
             </objects>
             <point key="canvasLocation" x="1111.5" y="376.5"/>
         </scene>
-        <!--RxSwfit-->
+        <!--RxSwift-->
         <scene sceneID="mRg-Sa-Eqb">
             <objects>
                 <viewController id="g2v-ja-FAU" customClass="PoiSearchViewController" customModule="RxSwiftStudy" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,7 +115,7 @@
                             <constraint firstItem="a7L-uM-ofD" firstAttribute="leading" secondItem="0JC-DQ-na6" secondAttribute="leadingMargin" id="u5W-2K-XwE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="RxSwfit" id="xVL-O3-X1L"/>
+                    <navigationItem key="navigationItem" title="RxSwift" id="xVL-O3-X1L"/>
                     <connections>
                         <outlet property="keywordsField" destination="a7L-uM-ofD" id="2e3-mh-Iup"/>
                         <outlet property="tableView" destination="fIl-Tl-KKM" id="tsk-O6-RCZ"/>
