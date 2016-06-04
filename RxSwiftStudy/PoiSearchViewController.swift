@@ -29,8 +29,6 @@ class PoiSearchViewController: UIViewController {
     let identifier = "poi_result_cell"
 
     override func viewDidLoad() {
-
-
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
 
@@ -94,8 +92,8 @@ extension PoiSearchViewController {
         }
     }
 
-    func parseSuggestionJson (respose: AnyObject) -> [Suggestion] {
-        let json = JSON(respose)
+    func parseSuggestionJson (response: AnyObject) -> [Suggestion] {
+        let json = JSON(response)
         let items = json["result"]
         var result: [Suggestion] = []
 
