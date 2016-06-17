@@ -32,22 +32,25 @@ class PoiSearchViewController: UIViewController {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
 
+
         //监听文本录入
+
         keywordsField.rx_text
             .filter{ $0.characters.count > 0 }
             .throttle(1.0, scheduler: MainScheduler.instance)
-            .flatMap { self.querySuggestion($0) }
+            .flatMap {[unowned self] in self.querySuggestion($0) }
             .subscribe(
-                onNext: { (result) in
+                onNext: { [unowned self] (result) in
                     self.dataSource.value = result
                     result.forEach({ item in
                         print("\(item.city) - \(item.district) - \(item.suggest)")
                     })
                 },
-                onError: { (error) in
+                onError: { [unowned self] (error) in
                     self.dataSource.value = []
                     print(error)
             }).addDisposableTo(disposeBag)
+
 
 
         //绑定数据源
@@ -62,6 +65,10 @@ class PoiSearchViewController: UIViewController {
             print(item.suggest)
         }.addDisposableTo(disposeBag)
 
+    }
+
+    deinit{
+        print("=== PoiSearchViewController deinit ===")
     }
 }
 
